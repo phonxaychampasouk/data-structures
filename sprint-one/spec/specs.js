@@ -41,7 +41,7 @@ define([
       it('reports a size of 2 after adding two items', function() {
         stack.push('a');
         stack.push('b');
-        expect(stack.size()).to.equal(2);
+        expect(stack.size(stack)).to.equal(2);
       });
 
       it('does not error when removing from an empty stack', function() {
