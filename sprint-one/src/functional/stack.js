@@ -4,6 +4,7 @@ var Stack = function(arg) {
   someInstance.objTracker = 0;
   // Use an object with numeric keys to store values
   var storage = {};
+  var popValue = [];
   // Implement the methods below
   someInstance.push = function(value) {
 someInstance.objTracker++;
@@ -12,14 +13,13 @@ storage[someInstance.objTracker] = value;
   };
 
   someInstance.pop = function() {
-    if(storage.objTracker > 0)
-    {
-    delete storage[someInstance.objTracker];
+var tempHold = storage[someInstance.objTracker];
+     delete storage[someInstance.objTracker];
     someInstance.objTracker--;
-    }
-    else{
-      return 0;
-    }
+  return tempHold;
+
+
+
   };
 
   someInstance.size = function(value) {
@@ -27,12 +27,18 @@ storage[someInstance.objTracker] = value;
     {
       return 0;
     }
-    else{
-return someInstance.objTracker
-
+    else if(someInstance.objTracker <=0)
+    {
+      return 0;
+    }
+    else
+    {
+      return someInstance.objTracker;
     }
 
-  };
+    };
+
+
 
   return someInstance;
 };
