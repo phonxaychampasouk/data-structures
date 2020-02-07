@@ -4,7 +4,7 @@ var Stack = function(arg) {
   someInstance.objTracker = 0;
   // Use an object with numeric keys to store values
   var storage = {};
-  var popValue = [];
+  
   // Implement the methods below
   someInstance.push = function(value) {
 someInstance.objTracker++;

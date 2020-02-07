@@ -3,7 +3,7 @@ var Stack = function() {
   // but try not not reference your old code in writing the new style.
   var someInstance = {};
   someInstance.storage = {};
-  someInstance.nextUp = 0;
+  someInstance.objTracker = 0;
   _.extend(someInstance, stackMethods);
   return someInstance;
 };
@@ -15,14 +15,14 @@ var stackMethods = {
   },
 
   push: function(value) {
-    this.nextUp++;
-    this.storage[this.nextUp] = value;
+    this.objTracker++;
+    this.storage[this.objTracker] = value;
   },
 
   pop: function() {
-    let result = this.storage[this.nextUp];
-    delete this.storage[this.nextUp];
-    this.nextUp--;
+    let result = this.storage[this.objTracker];
+    delete this.storage[this.objTracker];
+    this.objTracker--;
     return result;
   }
 
