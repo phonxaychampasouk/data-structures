@@ -6,16 +6,32 @@ var LinkedList = function() {
 
   //add to end of list
   list.addToTail = function(value) {
-    
+    var accum = 0;
+if(accum > 0)
+{
   list.tail = Node(value);
+  list.head = Node(value);
+  accum++;
+
+}
+list.tail = Node(value);
+
+};
 
 
 
-  };
 
   //remove node that head point to
   list.removeHead = function() {
+
+   delete list.head.next;
+
+
+
+
   };
+
+
 
   //does list contain the target
   list.contains = function(target) {
@@ -29,6 +45,8 @@ var LinkedList = function() {
 
   return list;
 };
+
+
 
 //add node to end of current list
 var Node = function(value) {
